@@ -1,8 +1,14 @@
 # autocomplete system
-class node(self, value, left=None, right=None):
+class node(self, value):
     self.value = value
-    self.left = left
-    self.right = right
+    self.nodes = {}
+    self.isWordEnd = False
+
+    def addWord(word):
+
+        for char in word:
+            if self.nodes[char] == None:
+                self.nodes[char] = {}
 
 
 def create_tree(words):
@@ -25,6 +31,7 @@ def autocomplete(s, words):
 print(autocomplete("a"))
 print(autocomplete("b"))
 print(autocomplete("ba"))
+print(autocomplete("bor"))
 print(autocomplete("c"))
 print(autocomplete("d"))
 print(autocomplete("de"))
